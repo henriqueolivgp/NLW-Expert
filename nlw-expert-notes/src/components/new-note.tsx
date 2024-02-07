@@ -1,11 +1,24 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 export function NewNote() {
 
   // quando declaramos uma variavel do tipo boolean ela deve estar escrita em forma de pergunta
   const [shouldShowOnboarding, setShouldShowOnboarding] = useState(true)
+
+  function handleStartEditor(){
+    setShouldShowOnboarding(false)
+  }
+
+  // esta funcao sempre que o utilizador escrever e apagar tudo o paragrafo de escolher gravar e escrever volta a aparecer
+  function handleContentChanged (event: ChangeEvent<HTMLTextAreaElement>) {
+    // se o valor do event da textarea for igual a nada 
+    if(event.target.value === ''){
+      // faz com q o paragrafo de escolher gravar e escrever volta a aparecer
+      setShouldShowOnboarding(true)
+    }
+  }
 
   return (
     <Dialog.Root>
@@ -29,11 +42,19 @@ export function NewNote() {
             <span className="text-sm font-medium text-slate-200">
               Adicionar nota
             </span>
-            <p className="text-sm leading-6 text-slate-400 ">
+            {shouldShowOnboarding ? (
+              <p className="text-sm leading-6 text-slate-400 ">
               Comece <button className="font-medium text-lime-400 hover:underline">gravando uma nota</button> em
               áudio ou se preferir{" "}
-              <button className="font-medium text-lime-400 hover:underline">utilize apenas texto.</button>
+              <button onClick={handleStartEditor} className="font-medium text-lime-400 hover:underline">utilize apenas texto.</button>
             </p>
+            ) : (
+              <textarea 
+              autoFocus
+              className="text-sm leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none"
+              onChange={handleContentChanged}
+              />
+            )}
           </div>
           <button
             type="button"
