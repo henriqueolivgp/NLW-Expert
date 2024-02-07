@@ -1,7 +1,12 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
+import { useState } from "react";
 
 export function NewNote() {
+
+  // quando declaramos uma variavel do tipo boolean ela deve estar escrita em forma de pergunta
+  const [shouldShowOnboarding, setShouldShowOnboarding] = useState(true)
+
   return (
     <Dialog.Root>
       <Dialog.DialogTrigger className="rounded-md bg-slate-700 p-5 flex flex-col text-left gap-3 hover:ring-2 hover:ring-slate-600 focus-visible:ring-2 focus-visible:ring-lime-400 outline-none">
