@@ -1,5 +1,8 @@
 // o import * as Dialog esta a dizer que pega todas as exportacoes que o react-dialog faz e coloca-as dentro de Dialog
 import * as Dialog from "@radix-ui/react-dialog";
+import { formatDistanceToNow } from "date-fns";
+import { pt } from "date-fns/locale";
+import { X } from "lucide-react";
 
 interface NoteCardProps {
   note: {
@@ -35,12 +38,35 @@ export function NoteCard({ note }: NoteCardProps) {
         <Dialog.DialogOverlay className="inset-0 fixed bg-black/60" />
         {/* 
             Dialog.DialogContent e o local que ira conter o conteudo do nosso modal 
-
+            overflow-hidden esconde tudo o que tiver a sair da dive onde ele se encontra
         */}
-        <Dialog.DialogContent className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[640px] w-full h-[60vh] bg-slate-700 rounded-md flex flex-col outline-none">
+        <Dialog.DialogContent className="fixed overflow-hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[640px] w-full h-[60vh] bg-slate-700 rounded-md flex flex-col outline-none">
+          <Dialog.DialogClose className="absolute top-0 right-0 p-1.5 bg-slate-800 text-slate-400 hover:text-slate-100">
+            <X className="size-5" />
+          </Dialog.DialogClose>
           <div className="flex flex-1 flex-col gap-3 p-5">
-
+            <span className="text-sm font-medium text-slate-200">
+              {/*  
+                  utilizando a funcao formatDistanceToNow da biblioteca de date-fns  nos vamos buscar os dados do props e colocamos
+                  virgula e um objeto que ira conter o locale que ira colocar o texto em pt e o addSuffix: true que adiciona um sufixo
+                  como " ha 2 minutos atras" ou seja se for false iria colocar assim " 2 minutos atras" 
+              */}
+              {formatDistanceToNow(note.date, { locale: pt, addSuffix: true })}
+            </span>
+            <p className="text-sm leading-6 text-slate-400 ">{note.content}</p>
           </div>
+          <button
+            type="button"
+            className="w-full bg-slate-800 py-4 text-center text-sm text-slate-300 outline-none group" // group e o elemento pai dos proximos elementos
+          >
+            {/* 
+                aqui no group-hover eu estou a dizer que quando o group(elemento pai) estiver com hover eu quero o underline neste elemento
+            */}
+            Deseja{" "}
+            <span className="text-red-400 group-hover:underline">
+              apagar essa nota?
+            </span>
+          </button>
         </Dialog.DialogContent>
       </Dialog.DialogPortal>
     </Dialog.Root>
