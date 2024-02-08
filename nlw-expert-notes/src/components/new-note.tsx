@@ -1,23 +1,32 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
+import { toast } from 'sonner'
 
 export function NewNote() {
-
   // quando declaramos uma variavel do tipo boolean ela deve estar escrita em forma de pergunta
-  const [shouldShowOnboarding, setShouldShowOnboarding] = useState(true)
+  const [shouldShowOnboarding, setShouldShowOnboarding] = useState(true);
+  const [content, setContent] = useState('')
 
-  function handleStartEditor(){
-    setShouldShowOnboarding(false)
+  function handleStartEditor() {
+    setShouldShowOnboarding(false);
   }
 
   // esta funcao sempre que o utilizador escrever e apagar tudo o paragrafo de escolher gravar e escrever volta a aparecer
-  function handleContentChanged (event: ChangeEvent<HTMLTextAreaElement>) {
-    // se o valor do event da textarea for igual a nada 
-    if(event.target.value === ''){
+  function handleContentChanged(event: ChangeEvent<HTMLTextAreaElement>) {
+    setContent(event.target.value)
+    // se o valor do event da textarea for igual a nada
+    if (event.target.value === "") {
       // faz com q o paragrafo de escolher gravar e escrever volta a aparecer
-      setShouldShowOnboarding(true)
+      setShouldShowOnboarding(true);
     }
+  }
+
+  function handleSaveNote(event: FormEvent) {
+    event.preventDefault()
+
+    console.log(content)
+    toast.success('Nota criada com sucesso')
   }
 
   return (
@@ -38,33 +47,42 @@ export function NewNote() {
           <Dialog.DialogClose className="absolute top-0 right-0 p-1.5 bg-slate-800 text-slate-400 hover:text-slate-100">
             <X className="size-5" />
           </Dialog.DialogClose>
-          <div className="flex flex-1 flex-col gap-3 p-5">
-            <span className="text-sm font-medium text-slate-200">
-              Adicionar nota
-            </span>
-            {shouldShowOnboarding ? (
-              <p className="text-sm leading-6 text-slate-400 ">
-              Comece <button className="font-medium text-lime-400 hover:underline">gravando uma nota</button> em
-              áudio ou se preferir{" "}
-              <button onClick={handleStartEditor} className="font-medium text-lime-400 hover:underline">utilize apenas texto.</button>
-            </p>
-            ) : (
-              <textarea 
-              autoFocus
-              className="text-sm leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none"
-              onChange={handleContentChanged}
-              />
-            )}
-          </div>
-          <button
-            type="button"
-            className="w-full bg-lime-400 py-4 text-center text-sm text-lime-950 outline-none hover:bg-lime-500" // group e o elemento pai dos proximos elementos
-          >
-            Salvar nota
-          </button>
+          <form onSubmit={handleSaveNote} className="flex-1 flex flex-col">
+            <div className="flex flex-1 flex-col gap-3 p-5">
+              <span className="text-sm font-medium text-slate-200">
+                Adicionar nota
+              </span>
+              {shouldShowOnboarding ? (
+                <p className="text-sm leading-6 text-slate-400 ">
+                  Comece{" "}
+                  <button className="font-medium text-lime-400 hover:underline">
+                    gravando uma nota
+                  </button>{" "}
+                  em áudio ou se preferir{" "}
+                  <button
+                    onClick={handleStartEditor}
+                    className="font-medium text-lime-400 hover:underline"
+                  >
+                    utilize apenas texto.
+                  </button>
+                </p>
+              ) : (
+                <textarea
+                  autoFocus
+                  className="text-sm leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none"
+                  onChange={handleContentChanged}
+                />
+              )}
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-lime-400 py-4 text-center text-sm text-lime-950 outline-none hover:bg-lime-500" // group e o elemento pai dos proximos elementos
+            >
+              Salvar nota
+            </button>
+          </form>
         </Dialog.DialogContent>
       </Dialog.DialogPortal>
-      
     </Dialog.Root>
   );
 }
