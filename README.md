@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200px" alt="Project Logo" title="Project Title Logo" src="https://github.com/henriqueolivgp/Plataforma-De-Denuncias-De-Ciberataques/blob/main/CiberReports/public/CRWhite.png" />
+  <img width="450px" alt="Project Logo" title="Project Title Logo" src="https://github.com/henriqueolivgp/NLW-Expert-Notes/blob/main/nlw-expert-notes/src/assets/logo-nlw-expert.svg" />
   
   <h1 align="center">NLW-Expert-Notes (Rocketseat)</h1>
 
@@ -7,7 +7,7 @@
     🔗 <a href="https://app.visily.ai/projects/9dc5e6b0-76df-436c-8658-478c3c9da366/boards/550049" target="_blank">Project Link</a> 🔗
   </p>  
   
-  We are Pedro Ferreira and Henrique Oliveira, a dynamic web development team from ESTG, IPVC in Portugal. We both share enthusiasm for web development. This is our third collaborative project, each one enhancing our skills and deepening our love for web development. We, as students at ESTG, believe in the power of teamwork. Together, in Portugal, we are committed to pushing the boundaries of digital experiences, going beyond websites to create impactful online solutions.
+  This project was developed at a Rocketseat event, where Rocketseat gave a Figma Design, and we students developed this project in 3 temporally limited classes at the NLW-Experts event.  
 </p>
 
 ## 🧭 Table of contents
@@ -32,8 +32,8 @@ In the GitHub edit, drag the video that it already puts on github itself.
 
 ## 🎨 Layout
 
-Layout developed by **Henrique Oliveira** and **Pedro Ferreira**<br>
-└──> [Layout](https://app.visily.ai/projects/9dc5e6b0-76df-436c-8658-478c3c9da366/boards/550049)
+Layout developed by **Rocketseat**<br>
+└──> [Layout](https://www.figma.com/file/ACKyTBLJn5VSxRCGefZRqb/NLW-expert-%E2%80%A2-Notes-(Community)?type=design&t=QKrdmt1HY7WOmdxI-6)
 
 ## 👏 Learning and more Implementations
 
@@ -43,45 +43,36 @@ I learned a lot about TypeScript, I really loved using it but I still need to le
 
 - [x] [Vite](https://vitejs.dev/)  ```version: "4.4.5"```
 - [x] [React](https://reactjs.org/)  ```version: "18.2.0"```
-- [x] [Node.js](https://nodejs.org/en/)  ```version: "18.16.0"```
 - [x] [TypeScript](https://www.typescriptlang.org/)  ```version: "5.0.2"```
-- [x] [SupaBase](https://supabase.com/)  ```version: "2.39.0"```
 - [x] [TailwindCSS](https://tailwindcss.com/docs/installation)  ```version: "3.3.3"```
-- [x] [Flowbite Components](https://flowbite.com/docs/getting-started/introduction/)  ```version: "1.8.1"```
 
 ## 📂 Folder Structure
 
 ```plainText
 app
 .                       
-├── public                          # public file( images )
-├── src                             # Source files
-|   ├── client                      #  
-│       ├── assets                  # Contains Js bundles assets. e.g: icons, splash, images etc...
-│       ├── components              # Contains all global react components
-|           ├── NavbarComponents    #
-|           └── ProfileComponents   #
-|       ├── routes
-│       ├── screens                 # Contains application screens
-│       ├── theme                   # Contains the theme of the application
-|   ├── context                     # All contexts
-│   ├── hooks                       # Cstomized application hooks
-│   ├── providers                   # Contains application providers
-│   ├── services                    # Contains external and api services
-|   ├── main.tsx                    # Main File
-├── .env                            #
-├── .eslintrc.cjs                   #
-├── .gitignore                      #
-├── index.html                      #
-├── package-lock.json               #
-├── package.json                    #
-├── postcss.config.js               #
-├── README.md                       #
-├── tailwind.config.js              #
-├── tsconfig.json                   #
-├── tsconfig.node.json              #         
-.                                   #
-└── vite.config.ts                  #
+├── public                        # public file( images )
+├── src                           # Source files  
+│    ├── assets                   # Contains Js bundles assets. e.g: icons, splash, images etc...
+│    ├── components               # Contains all global react components
+|          ├── new-note.tsx       #
+|          └── note-card.tsx      #
+|    ├── app.tsx                  #
+│    ├── index.css                # Contains application screens
+│    ├── main.tsx                 # Contains the theme of the application
+|    ├── vite-env.d.ts            #
+├── .env                          #
+├── .gitignore                    #
+├── index.html                    #
+├── package-lock.json             #
+├── package.json                  #
+├── postcss.config.js             #
+├── vite.config.ts                #
+├── tailwind.config.js            #
+├── tsconfig.json                 #
+├── tsconfig.node.json            #         
+.                                 #
+└── README.md                     #
 ```
 
 ## 🚀 Running the Project
@@ -97,13 +88,13 @@ Implemented with SupaBase -> Relational Database
 Clone the project
 
 ```bash
-  git clone [https://link-para-o-projeto](https://github.com/henriqueolivgp/Plataforma-De-Denuncias-De-Ciberataques.git)
+  git clone [https://link-para-o-projeto](https://github.com/henriqueolivgp/NLW-Expert-Notes.git)
 ```
 
 Enter the project directory
 
 ```bash
-  cd CiberReports
+  cd nlw-expert-notes
 ```
 
 Install with dependencies
@@ -126,9 +117,8 @@ This project is under the MIT license. See the [LICENSE](https://github.com/henr
 
 <p align="center">
   <img width="200px" alt="Henrique Oliveira" title="Author Henrique Oliveira" src="https://github.com/henriqueolivgp/Plataforma-De-Denuncias-De-Ciberataques/blob/main/CiberReports/src/client/assets/HenryDev.png" />
-  <img width="200px" alt="Pedro Ferreira" title="Author Pedro Ferreira" src="https://github.com/henriqueolivgp/Plataforma-De-Denuncias-De-Ciberataques/blob/main/CiberReports/src/client/assets/PedroF.png" />
 
-  <h3 align="center">Henrique Oliveira and Pedro Ferreira</h3>
+  <h3 align="center">Henrique Oliveira</h3>
   
   <p align="center">  
     We made this project with love and hate 😅, come to see!!
