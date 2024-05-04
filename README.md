@@ -121,7 +121,7 @@ This project is under the MIT license. See the [LICENSE](https://github.com/henr
   <h3 align="center">Henrique Oliveira</h3>
   
   <p align="center">  
-    We made this project with love and hate 😅, come to see!!
+    I made this project with love and hate 😅, come to see!!
   </p>
 </p>  
   
