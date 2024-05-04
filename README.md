@@ -128,11 +128,8 @@ This project is under the MIT license. See the [LICENSE](https://github.com/henr
 <div align="center">
 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn(HenriqueOliveira)-1f6feb?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/henrique-oliveira-gp)](https://www.linkedin.com/in/henrique-oliveira-gp)
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn(PedroFerreira)-1f6feb?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/henrique-oliveira-gp)](https://www.linkedin.com/in/henrique-oliveira-gp) 
 [![Gmail Badge](https://img.shields.io/badge/-HenriqueOliveira-1f6feb?style=flat-square&logo=Gmail&logoColor=white&link=mailto:henriqueoliveira.g.p)](mailto:henriqueoliveira.g.p@gmail.com)
-[![Gmail Badge](https://img.shields.io/badge/-PedroFerreira-1f6feb?style=flat-square&logo=Gmail&logoColor=white&link=mailto:metanolpedro)](mailto:metanolpedro@gmail.com)
 [![GitHub Badge](https://img.shields.io/badge/-GitHub-1f6feb?style=flat-square&logo=GitHub&logoColor=white&link=https://github.com/henriqueolivgp)](https://github.com/henriqueolivgp)
-[![GitHub Badge](https://img.shields.io/badge/-GitHub-1f6feb?style=flat-square&logo=GitHub&logoColor=white&link=https://github.com/pedrof04)](https://github.com/pedrof04)
 
 </div>  
   
